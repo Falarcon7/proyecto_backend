@@ -12,6 +12,6 @@ El proyecto está organizado en módulos independientes por stack tecnológico:
 
 ```
 proyecto-backend/
-├── 01_node_express_postgres/    # Fase 1: API REST con Node.js, Express y PostgreSQL (Docker)
-├── 02_java_spring_boot/        # Fase 2: API REST y Persistencia con Java y Spring Boot
+├── 01_node_express_postgres/    # Fase 1: API REST con Node.js, Express y PostgreSQL (Docker)✔️
+├── 02_java_spring_boot/        # Fase 2: API REST y Persistencia con Java y Spring Boot⌛
 └── README.md                    # Documentación principal del Hub
