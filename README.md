@@ -6,7 +6,7 @@ El objetivo principal es demostrar principios de diseño cliente-servidor, integ
 
 ---
 
-##📁 Estructura del Repositorio
+## 📁 Estructura del Repositorio
 
 El proyecto está organizado en módulos independientes por stack tecnológico:
 
