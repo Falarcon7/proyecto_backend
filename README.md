@@ -6,11 +6,11 @@ El objetivo principal es demostrar principios de diseño cliente-servidor, integ
 
 ---
 
-## 📁 Estructura del Repositorio
+## Estructura del Repositorio
 
 El proyecto está organizado en módulos independientes por stack tecnológico:
 
-```text
+
 proyecto-backend/
 ├── 01_node_express_postgres/    # Fase 1: API REST con Node.js, Express y PostgreSQL (Docker)
 ├── 02_java_spring_boot/        # Fase 2: API REST y Persistencia con Java y Spring Boot
