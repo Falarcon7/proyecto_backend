@@ -1,6 +1,7 @@
-Pequeña aplicación web Fullstack desarrollada para demostrar los fundamentos de arquitectura cliente-servidor
+# Pequeña aplicación web Fullstack desarrollada para demostrar los fundamentos de arquitectura cliente-servidor
 
-Tecnologías Utilizadas
+
+## Tecnologías Utilizadas
 * **Backend:** Node.js, Express
 * **Base de Datos:** PostgreSQL (ejecutado en contenedores)
 * **Infraestructura:** Docker
@@ -10,20 +11,20 @@ Cómo ejecutar el proyecto localmente
 
 Sigue estos pasos para clonar y echar a andar el entorno en tu máquina:
 
-1. **Clona el repositorio:**
+### 1. **Clona el repositorio:**
 git clone [https://github.com/Falarcon7/proyecto_backend.git](https://github.com/Falarcon7/proyecto_backend.git)
 
    cd proyecto-backend
    
    cd 01_node_express_postgres
 
-3. **Levanta la base de datos con Docker:** 
+### 2. **Levanta la base de datos con Docker:** 
 docker-compose up -d
 
-4. **Instala las dependencias del servidor:**
+### 3. **Instala las dependencias del servidor:**
 npm install
 
-5. **Inicia el servidor:** 
+### 4. **Inicia el servidor:** 
 node index.js
 
 
