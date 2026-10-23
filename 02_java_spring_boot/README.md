@@ -10,7 +10,7 @@ Aplicación web Fullstack para la gestión de un inventario de productos, conect
 * **Frontend:** HTML5, CSS3, JavaScript (Fetch API)
 * **Arquitectura:** REST API (Controlador, Repositorio, Entidad)
 
-## ⚙️ Cómo ejecutar el proyecto localmente
+##  Cómo ejecutar el proyecto localmente
 
 Sigue estos pasos para clonar y echar a andar el entorno en tu máquina:
 
