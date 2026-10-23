@@ -7,7 +7,7 @@
 * **Infraestructura:** Docker
 * **Frontend:** HTML5, CSS3,  JavaScript 
 
-Cómo ejecutar el proyecto localmente
+##Cómo ejecutar el proyecto localmente
 
 Sigue estos pasos para clonar y echar a andar el entorno en tu máquina:
 
