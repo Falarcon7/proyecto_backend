@@ -16,7 +16,9 @@ Sigue estos pasos para clonar y echar a andar el entorno en tu máquina:
 
 ### 1. Clonar el repositorio: 
 git clone https://github.com/Falarcon7/proyecto_backend.git
+
 cd proyecto_backend
+
 cd02_spring_boot_postgres
 
 ### 2. levantar bd con docker: 
