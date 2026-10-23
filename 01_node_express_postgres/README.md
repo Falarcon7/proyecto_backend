@@ -11,18 +11,20 @@ Cómo ejecutar el proyecto localmente
 Sigue estos pasos para clonar y echar a andar el entorno en tu máquina:
 
 1. **Clona el repositorio:**
---git clone [https://github.com/Falarcon7/proyecto_backend.git](https://github.com/Falarcon7/proyecto_backend.git)
-   -cd proyecto-backend
-   -cd 01_node_express_postgres
+git clone [https://github.com/Falarcon7/proyecto_backend.git](https://github.com/Falarcon7/proyecto_backend.git)
 
-3. **Levanta la base de datos con Docker** 
---docker-compose up -d
+   cd proyecto-backend
+   
+   cd 01_node_express_postgres
 
-4. **Instala las dependencias del servidor**
---npm install
+3. **Levanta la base de datos con Docker:** 
+docker-compose up -d
 
-5. **Inicia el servidor** 
---node index.js
+4. **Instala las dependencias del servidor:**
+npm install
+
+5. **Inicia el servidor:** 
+node index.js
 
 
 
