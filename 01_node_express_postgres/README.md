@@ -17,13 +17,13 @@ git clone [https://github.com/Falarcon7/proyecto_backend.git](https://github.com
    
    cd 01_node_express_postgres
 
-3. **Levanta la base de datos con Docker** 
+3. **Levanta la base de datos con Docker:** 
 docker-compose up -d
 
-4. **Instala las dependencias del servidor**
+4. **Instala las dependencias del servidor:**
 npm install
 
-5. **Inicia el servidor** 
+5. **Inicia el servidor:** 
 node index.js
 
 
