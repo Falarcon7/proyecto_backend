@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portafolio - Gestión de Productos</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f4f4f9; }
+        .card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background: #007bff; color: white; }
+        input, button { padding: 8px; margin: 5px 0; }
+        button { background: #28a745; color: white; border: none; cursor: pointer; border-radius: 4px; }
+        button:hover { background: #218838; }
+        .btn-danger { background: #dc3545; }
+        .btn-danger:hover { background: #c82333; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Inventario - Spring Boot (Java)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Acciones</th>
+                </tr>
+            ​</thead>
+            <tbody id="tabla-productos">
+                <!-- Aquí se cargan los productos con JS -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <h3 id="titulo-form">Gestión de Producto</h3>
+        <input type="text" id="nombre" placeholder="Nombre del producto"><br>
+        <input type="number" id="precio" placeholder="Precio"><br>
+        <input type="number" id="stock" placeholder="Stock"><br>
+        <button id="btn-accion" onclick="guardarOActualizarProducto()">Guardar Producto</button>
+        <!-- Botón de cancelar oculto por defecto -->
+        <button id="btn-cancelar" onclick="cancelarEdicion()" style="background: #6c757d; color: white; display: none; margin-left: 5px;">Cancelar</button>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:8080/productos';
+
+        async function cargarProductos() {
+            try {
+                const respuesta = await fetch(API_URL);
+                const productos = await respuesta.json();
+                const tbody = document.getElementById('tabla-productos');
+                tbody.innerHTML = '';
+                productos.forEach(p => {
+                    tbody.innerHTML += `
+                        <tr>
+                            <td>${p.id}</td>
+                            <td>${p.nombre}</td>
+                            <td>$${p.precio}</td>
+                            <td>${p.stock}</td>
+                            <td>
+                                <button onclick="prepararActualizacion(${p.id}, '${p.nombre}', ${p.precio}, ${p.stock})" style="background: #ffc107; color: black; margin-right: 5px;">Editar</button>
+                                <button class="btn-danger" onclick="eliminarProducto(${p.id})">Eliminar</button>
+                            </td>
+                        </tr>
+                    `;
+                });
+            } catch (error) {
+                console.error("Error al cargar productos:", error);
+            }
+        }
+
+        async function crearProducto() {
+            const nombre = document.getElementById('nombre').value;
+            const precio = parseFloat(document.getElementById('precio').value);
+            const stock = parseInt(document.getElementById('stock').value);
+
+            await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ nombre, precio, stock })
+            });
+
+            document.getElementById('nombre').value = '';
+            document.getElementById('precio').value = '';
+            document.getElementById('stock').value = '';
+            cargarProductos();
+        }
+
+        async function eliminarProducto(id) {
+            await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
+            cargarProductos();
+        }
+
+        // Cargar al abrir la página
+        cargarProductos();
+
+        // Variable temporal para saber qué ID estamos editando
+        let idEnEdicion = null;
+
+        function prepararActualizacion(id, nombre, precio, stock) {
+            idEnEdicion = id;
+            document.getElementById('nombre').value = nombre;
+            document.getElementById('precio').value = precio;
+            document.getElementById('stock').value = stock;
+            
+            // Cambiar botón a modo edición
+            const btnGuardar = document.getElementById('btn-accion');
+            btnGuardar.innerText = "Actualizar Producto";
+            btnGuardar.style.background = "#ffc107";
+            btnGuardar.style.color = "black";
+
+            // Mostrar el botón de cancelar
+            document.getElementById('btn-cancelar').style.display = 'inline-block';
+        }
+
+        function cancelarEdicion() {
+            idEnEdicion = null;
+            document.getElementById('nombre').value = '';
+            document.getElementById('precio').value = '';
+            document.getElementById('stock').value = '';
+            
+            // Volver botón a estado normal
+            const btnGuardar = document.getElementById('btn-accion');
+            btnGuardar.innerText = "Guardar Producto";
+            btnGuardar.style.background = "#28a745";
+            btnGuardar.style.color = "white";
+
+            // Ocultar botón de cancelar
+            document.getElementById('btn-cancelar').style.display = 'none';
+        }
+
+        async function guardarOActualizarProducto() {
+            const nombre = document.getElementById('nombre').value;
+            const precio = parseFloat(document.getElementById('precio').value);
+            const stock = parseInt(document.getElementById('stock').value);
+
+            if (idEnEdicion === null) {
+                // Si no estamos editando nadie, CREAMOS (POST)
+                await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ nombre, precio, stock })
+                });
+            } else {
+                // Si hay un ID en edición, ACTUALIZAMOS (PUT)
+                await fetch(`${API_URL}/${idEnEdicion}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ nombre, precio, stock })
+                });
+                
+                // Reseteamos el estado de edición
+                idEnEdicion = null;
+                const btnGuardar = document.getElementById('btn-accion');
+                btnGuardar.innerText = "Guardar Producto";
+                btnGuardar.style.background = "#28a745";
+                btnGuardar.style.color = "white";
+            }
+
+            // Limpiar inputs y recargar tabla
+            document.getElementById('nombre').value = '';
+            document.getElementById('precio').value = '';
+            document.getElementById('stock').value = '';
+            cargarProductos();
+        }
+    </script>
+</body>
+</html>
