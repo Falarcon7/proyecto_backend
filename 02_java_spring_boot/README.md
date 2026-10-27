@@ -27,6 +27,6 @@ docker run --name postgres-db-fase2 -e POSTGRES_PASSWORD=mi_password -e POSTGRES
 ### 3. Iniciar servidor backend (Spring Boot): 
 .\mvnw spring-boot:run
 
-### 4. Abrir la interfaz web:
+
 pasar a fase 3
 
