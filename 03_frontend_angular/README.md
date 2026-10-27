@@ -2,20 +2,20 @@
 
 Interfaz de usuario desarrollada en **Angular** que se conecta al backend de Spring Boot para gestionar el inventario de productos en tiempo real.
 
-## 🛠️ Tecnologías Utilizadas
+##  Tecnologías Utilizadas
 - **Angular 18+** (TypeScript, Componentes Standalone)
 - **HttpClient** (Consumo de API REST)
 - **FormsModule** (Gestión de formularios bidireccionales)
 - **CSS3 Moderno** (Diseño adaptable y limpio)
 
-- ## ✨ Funcionalidades
-- 📦 **Listado en tiempo real** de productos obtenidos desde la API de Java.
-- ➕ **Registro de nuevos productos** con validación de campos.
-- ✏️ **Edición de productos** existentes.
-- 🗑️ **Eliminación de registros** con confirmación.
-- ⚠️ **Manejo de estados visuales** (Carga y errores de conexión con el backend).
+- ##  Funcionalidades
+-  **Listado en tiempo real** de productos obtenidos desde la API de Java.
+-  **Registro de nuevos productos** con validación de campos.
+-  **Edición de productos** existentes.
+-  **Eliminación de registros** con confirmación.
+-  **Manejo de estados visuales** (Carga y errores de conexión con el backend).
 
-- ## 🚀 Cómo Ejecutar la Aplicación
+- ##  Cómo Ejecutar la Aplicación
 Asegúrate de tener instalado [Node.js](https://nodejs.org/) y Angular CLI.
 
 ### 1. Clonar el repositorio: 
