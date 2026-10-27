@@ -28,5 +28,5 @@ docker run --name postgres-db-fase2 -e POSTGRES_PASSWORD=mi_password -e POSTGRES
 .\mvnw spring-boot:run
 
 ### 4. Abrir la interfaz web:
-Abrir index.html
+pasar a fase 3
 
