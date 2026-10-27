@@ -10,6 +10,14 @@ Aplicación web Fullstack para la gestión de un inventario de productos, conect
 * **Frontend:** HTML5, CSS3, JavaScript (Fetch API)
 * **Arquitectura:** REST API (Controlador, Repositorio, Entidad)
 
+## 🛠️ Requisitos del Entorno y Tecnologías
+Para poder compilar y ejecutar este backend correctamente, asegúrate de tener instalado lo siguiente en tu sistema:
+
+- **Java JDK (Versión 17 o superior)** (Entorno de ejecución para Spring Boot).
+- **Maven** (Gestor de dependencias — *puedes usar el Maven Wrapper `mvnw` incluido en el proyecto*).
+- **Docker y Docker Compose** (Para levantar el contenedor de la Base de Datos PostgreSQL).
+- **PostgreSQL** (Configurado para correr en el puerto local **5433** según el Docker Compose del proyecto).
+
 ##  Cómo ejecutar el proyecto localmente
 
 Sigue estos pasos para clonar y echar a andar el entorno en tu máquina:
