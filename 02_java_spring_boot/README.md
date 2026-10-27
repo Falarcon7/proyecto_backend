@@ -10,7 +10,7 @@ Aplicación web Fullstack para la gestión de un inventario de productos, conect
 * **Frontend:** HTML5, CSS3, JavaScript (Fetch API)
 * **Arquitectura:** REST API (Controlador, Repositorio, Entidad)
 
-## 🛠️ Requisitos del Entorno y Tecnologías
+##  Requisitos del Entorno y Tecnologías
 Para poder compilar y ejecutar este backend correctamente, asegúrate de tener instalado lo siguiente en tu sistema:
 
 - **Java JDK (Versión 17 o superior)** (Entorno de ejecución para Spring Boot).
