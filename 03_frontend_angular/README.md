@@ -1,4 +1,4 @@
-# 🚀 Fase 3: Frontend con Angular
+#  Fase 3: Frontend con Angular
 
 Interfaz de usuario desarrollada en **Angular** que se conecta al backend de Spring Boot para gestionar el inventario de productos en tiempo real.
 
